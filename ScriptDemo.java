@@ -127,7 +127,10 @@ class CypherA implements Cypherer {
 
 public class ScriptDemo extends Applet {
     static void showMenu()  {
-    /*CypherA cyph = new CypherA("D:\\src\\key.txt");
+     try{
+        CypherA cyph = new CypherA("D:\\src\\key.txt");
+        boolean isExiting = false;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         while(!isExiting) {
             System.out.println("\n\n ***MENU***");
@@ -155,11 +158,14 @@ public class ScriptDemo extends Applet {
                     System.out.println("Wrong choice, try again, please.");
                     break;
             }
-        }*/
-    }
+        }
+     } catch(IOException e) {
+        System.err.print(e);
+     }
+  }
 
     public void init() {
-
-            ScriptDemo.showMenu();
+        ScriptDemo.showMenu();
     }
+
 }
